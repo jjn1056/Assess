@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+psql -c "drop table courses"
+psql -c "drop table marks"
+psql -c "drop table students"
+psql -c "drop table tests"
+

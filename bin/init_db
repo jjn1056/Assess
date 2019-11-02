@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+psql -f sql/01.sql
+psql -c "COPY courses(id,cname,teacher) FROM '$(PWD)/data/courses.csv' DELIMITER ',' CSV HEADER;"
+psql -c "COPY marks(test_id,student_id,mark) FROM '$(PWD)/data/marks.csv' DELIMITER ',' CSV HEADER;"
+psql -c "COPY students(id,sname) FROM '$(PWD)/data/students.csv' DELIMITER ',' CSV HEADER;"
+psql -c "COPY tests(id,course_id,sweight) FROM '$(PWD)/data/tests.csv' DELIMITER ',' CSV HEADER;"
